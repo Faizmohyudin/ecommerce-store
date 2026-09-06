@@ -1,5 +1,6 @@
 let cartList = document.querySelector("#cartList");
 let grandTotal = document.querySelector("#grandTotal");
+let proceedCheckoutBtn = document.querySelector("#proceedCheckoutBtn");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -9,6 +10,10 @@ function productRow() {
 
   if (cart.length === 0) {
     cartList.innerHTML = "<p>Your cart is empty.</p>";
+    proceedCheckoutBtn.addEventListener("click" , ()=>{
+      alert("Your cart is empty")
+      proceedCheckoutBtn.href = "#"
+    })
     return;
   }
 
